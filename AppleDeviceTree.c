@@ -261,8 +261,8 @@ DT__FlattenDeviceTree(void **buffer_p, uint32_t *length)
     uint32_t totalSize;
     void *buf;
 
-    DPRINTF("DT__FlattenDeviceTree(0x%x, 0x%x)\n", buffer_p, length);
-    if (buffer_p) DT__PrintTree(rootNode);
+//    DPRINTF("DT__FlattenDeviceTree(0x%x, 0x%x)\n", buffer_p, length);
+//    if (buffer_p) DT__PrintTree(rootNode);
     
     totalSize = DTInfo.numNodes * sizeof(DeviceTreeNode) + 
         DTInfo.numProperties * sizeof(DeviceTreeNodeProperty) +

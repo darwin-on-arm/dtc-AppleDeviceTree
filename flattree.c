@@ -283,7 +283,7 @@ static void flatten_tree(struct node *tree, struct emitter *emit,
 
 		printf("Begin property %s for AppleNode %p\n", prop->name, childAppleNode);
 
-		DT__AddProperty(childAppleNode, prop->name, prop->val.len, (void*)(&prop->val));
+		DT__AddProperty(childAppleNode, prop->name, prop->val.len, (void*)(prop->val.val));
 
 		if (streq(prop->name, "name")) {
 			printf("Saw a name!\n");
