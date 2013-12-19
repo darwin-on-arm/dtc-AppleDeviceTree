@@ -429,10 +429,10 @@ cell_t get_node_phandle(struct node *root, struct node *node)
 
 	node->phandle = phandle;
 
-	if (!get_property(node, "linux,phandle")
+	if (!get_property(node, "AAPL,phandle")
 	    && (phandle_format & PHANDLE_LEGACY))
 		add_property(node,
-			     build_property("linux,phandle",
+			     build_property("AAPL,phandle",
 					    data_append_cell(empty_data, phandle)));
 
 	if (!get_property(node, "phandle")
