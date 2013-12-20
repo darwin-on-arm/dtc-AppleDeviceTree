@@ -40,7 +40,7 @@ typedef char DTEntryNameBuf[32];
 
 #include "AppleDeviceTree.h"
 
-#define DPRINTF(args...) printf(args)
+#define DPRINTF(args...) /* printf(args) */
 
 
 void

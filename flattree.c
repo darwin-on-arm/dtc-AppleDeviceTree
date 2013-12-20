@@ -266,7 +266,6 @@ static void flatten_tree(struct node *tree, struct emitter *emit,
 	static Node* childAppleNode = NULL; /* AppleNode */
 	int seen_name_prop = 0;
 
-	printf("Beginning node %s, %p\n", tree->fullpath, tree->parent);
 	childAppleNode = DT__FindNode(tree->fullpath, 1);
 
 	emit->beginnode(etarget, tree->labels);
@@ -281,12 +280,9 @@ static void flatten_tree(struct node *tree, struct emitter *emit,
 	for_each_property(tree, prop) {
 		int nameoff;
 
-		printf("Begin property %s for AppleNode %p\n", prop->name, childAppleNode);
-
 		DT__AddProperty(childAppleNode, prop->name, prop->val.len, (void*)(prop->val.val));
 
 		if (streq(prop->name, "name")) {
-			printf("Saw a name!\n");
 			seen_name_prop = 1;
 		}
 
@@ -319,7 +315,6 @@ static void flatten_tree(struct node *tree, struct emitter *emit,
 	}
 
 	for_each_child(tree, child) {
-		printf("Recurse-->\n");
 		flatten_tree(child, emit, etarget, strbuf, vi);
 	}
 
