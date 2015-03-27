@@ -18,7 +18,8 @@ CONFIG_LOCALVERSION =
 CPPFLAGS = -I libfdt
 WARNINGS = -Wall -Wpointer-arith -Wcast-qual -Wnested-externs \
 	-Wstrict-prototypes -Wmissing-prototypes -Wredundant-decls
-CFLAGS = -g -Os -fPIC $(WARNINGS) -m32
+CFLAGS   = -g -Os -fPIC $(WARNINGS) -m32
+LDFLAGS  = -m32
 
 BISON = bison
 LEX = flex
